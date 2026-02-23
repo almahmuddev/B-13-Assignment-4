@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- dashboard Header -->
+        <header class="dashboard-header">
+            <h1 class="dashboard-title">Job Application Tracker</h1>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <p>Total</p>
+                    <span id="available-count" class="stat-number">0</span>
+                </div>
+                <div class="stat-box">
+                    <p>Scheduled Interviews</p>
+                    <span id="count-interview" class="stat-number">0</span>
+                </div>
+                <div class="stat-box">
+                    <p>Rejected</p>
+                    <span id="count-rejected" class="stat-number">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Jobs Section -->
+        <section class="jobs-section">
+            <div class="section-header">
+                <h2 class="section-title">Available Jobs</h2>
+                <div class="tabs-container" id="tabs-container">
+                    <button class="tab-btn active" data-tab="all" id="tab-all">All</button>
+                    <button class="tab-btn" data-tab="interview" id="tab-interview">Interview</button>
+                    <button class="tab-btn" data-tab="rejected" id="tab-rejected">Rejected</button>
+                </div>
+            </div>
+
+            <!-- Jobs Grid -->
+            <div id="jobs-container" class="jobs-grid">
+            </div>
+        </section>
+    </div>
+
+    <!-- Job Card Template -->
+    <section id="job-card-template">
+        <div class="job-card">
+            <div class="job-header">
+                <h3 class="company-name"></h3>
+                <p class="position"></p>
+            </div>
+
+            <div class="job-details">
+                <div class="detail">
+                    <span class="icon">📍</span>
+                    <span class="location"></span>
+                </div>
+                <div class="detail">
+                    <span class="icon">💼</span>
+                    <span class="type"></span>
+                </div>
+                <div class="detail salary-detail">
+                    <span class="icon">💰</span>
+                    <span class="salary"></span>
+                </div>
+                <div class="detail" id="not-appied">
+                    <a>Not Applied</a>
+                </div>
+            </div>
+
+            <p class="description"></p>
+
+            <div class="action-buttons">
+                <button class="status-btn interview-btn">
+                    Schedule Interview
+                </button>
+                <button class="status-btn rejected-btn">
+                    Reject
+                </button>
+                <button class="delete-btn">
+                    🗑️
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- empty info -->
+
+    <template id="empty-state-template">
+        <div class="empty-state">
+            <div class="empty-icon">📋</div>
+            <h3 class="empty-title">No Jobs Available</h3>
+            <p class="empty-subtitle">Try switching tabs or applying to more jobs to get started!</p>
+        </div>
+    </template>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
