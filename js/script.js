@@ -17,16 +17,13 @@ const jobsData = [
 let jobs = [...jobsData];
 let currentTab = "all";
 
-// DOM
+// manipulation dom
 const jobsContainer = document.getElementById("jobs-container");
 const tabButtons = document.querySelectorAll(".tab-btn");
 const totalCount = document.getElementById("available-count");
 const interviewCountEl = document.getElementById("count-interview");
 const rejectedCountEl = document.getElementById("count-rejected");
-// const sectionCount = document.getElementById("section-count");
-// const tabInterview = document.getElementById("tab-interview");
-// const tabRejected = document.getElementById("tab-rejected");
-const jobTemplate = document.getElementById("job-card-template");
+const jobTemplate = document.getElementById("job-card-part");
 const emptyTemplate = document.getElementById("empty-state-template");
 
 function updateCounts() {
@@ -35,9 +32,6 @@ function updateCounts() {
 
     interviewCountEl.textContent = interviewCount;
     rejectedCountEl.textContent = rejectedCount;
-
-    // tabInterview.textContent = `Interview (${interviewCount})`;
-    // tabRejected.textContent = `Rejected (${rejectedCount})`;
 
     totalCount.textContent = jobs.length;
 }
@@ -54,6 +48,15 @@ function createJobCard(job) {
     card.querySelector(".location").textContent = job.location;
     card.querySelector(".type").textContent = job.type;
     card.querySelector(".salary").textContent = job.salary;
+    const statusText = card.querySelector(".status-text");
+
+    if (job.status === "interview") {
+        statusText.textContent = "Applied";
+    } else if (job.status === "rejected") {
+        statusText.textContent = "Rejected";
+    } else {
+        statusText.textContent = "Not Applied";
+    }
     card.querySelector(".description").textContent = job.description;
 
     const interviewBtn = card.querySelector(".interview-btn");
@@ -82,10 +85,6 @@ function renderJobs() {
     );
 
     updateCounts();
-
-    // if (sectionCount) {
-    //     sectionCount.textContent = `(${filteredJobs.length})`;
-    // }
 
     if (filteredJobs.length === 0) {
         jobsContainer.appendChild(emptyTemplate.content.cloneNode(true));

@@ -1,7 +1,3 @@
-
-
-
-
 * {
     margin: 0;
     padding: 0;
@@ -11,8 +7,7 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.5;
-    /* color: #333; */
-    background:  #e7ecf4f4;
+    background: #e7ecf4f4;
     padding: 2.5rem 0;
 }
 
@@ -20,17 +15,56 @@ header {
     margin-bottom: 39px;
 }
 
-/* .container {
-    max-width: 1400px;
-    margin: 0 auto;
-} */
+
+
+@media screen and (min-width: 1201px) {
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    .container {
+        width: 85%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .container {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width:567px) and (max-width: 767px) {
+    .container {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .container {
+        width: 94%;
+        margin: 0 auto;
+    }
+
+    .stats-container {
+        display: grid !important;
+        gap: 1rem !important;
+    }
+
+}
 
 /* Dashboard Header */
 .dashboard-header {
     color: #333333e8;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 1.5rem;
 }
 
 .dashboard-title {
@@ -40,11 +74,10 @@ header {
 
 .stats-container {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.4rem;
 }
 
 .stat-box {
-    text-align: center;
     flex: 1;
     background: rgba(255, 255, 255, 0.56);
     padding: 16px 28px;
@@ -60,7 +93,7 @@ header {
 }
 
 .stat-number {
-    font-size: 3rem;
+    font-size: 2.7rem;
     font-weight: 900;
     display: block;
 }
@@ -80,13 +113,13 @@ header {
 }
 
 .section-title {
-    font-size: 2.65rem;
+    font-size: 2.6rem;
     font-weight: 900;
     color: #333333e8;
 }
 
 .tabs-container {
-    display: grid;
+    display: flex;
     background: rgba(255, 255, 255, 0.56);
     padding: 8px;
     border-radius: 20px;
@@ -98,8 +131,9 @@ header {
     padding: 15px 25px;
     border: none;
     background: transparent;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: 0.06em;
+    font-weight: 500;
     border-radius: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -116,8 +150,8 @@ header {
     transform: translateY(-2px);
 }
 
-/* Jobs Grid */
 
+/* Jobs Grid */
 .jobs-grid {
     display: grid;
     gap: 1.5rem;
@@ -128,7 +162,7 @@ header {
 .job-card {
     background: rgba(255, 255, 255, 0.56);
     border: 1px solid #e5e7eb;
-    padding: 32px;
+    padding: 32px 24px;
     border-radius: 24px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -170,8 +204,7 @@ header {
 
 .detail {
     display: flex;
-    align-items: center;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: #333333c0;
     margin-bottom: 8px;
@@ -180,7 +213,7 @@ header {
 .icon {
     width: 25px;
     margin-right: 5px;
-    font-size: 1.2em;
+    font-size: 1.2rem;
 }
 
 .salary-detail {
@@ -191,22 +224,22 @@ header {
     font-size: 1.125rem;
 }
 
-#not-appied a {
-    background: #2563eb;
-    color: white;
+.status-detail span {
+    background: #d6deef;
+    color: #333333e8;
     padding: 8px 16px;
     border: 1px solid transparent;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     margin-top: 10px;
 }
 
-#not-appied a:hover {
-    color: #2563eb;
-    border: 1px solid;
-    background: white;
+.status-detail span:hover {
+    color: #333333e8;
+    border: 1px solid #c6d3ee;
+    background: #e3e8f1;
     transform: translateY(-2px);
     transition: all 0.5s ease;
 }
@@ -227,10 +260,11 @@ header {
 
 .status-btn {
     flex: 1;
-    padding: 16px;
+    padding: 10px 12px;
     border: none;
-    border-radius: 16px;
-    font-size: 0.95rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    letter-spacing: .06em;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -272,16 +306,13 @@ header {
 }
 
 .delete-btn {
-    width: 56px;
-    height: 56px;
+    width: 46px;
+    height: 46px;
     color: white;
     border: 1px solid #000000b7;
-    border-radius: 16px;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 1.25rem;
 }
 
@@ -290,9 +321,9 @@ header {
     box-shadow: 0 8px 24px rgba(107, 114, 128, 0.4);
 }
 
+
 /* Empty State */
 .empty-state {
-    grid-column: 1 / -1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -304,8 +335,7 @@ header {
 .empty-icon {
     width: 128px;
     height: 128px;
-    /* background: linear-gradient(135deg, #f3f4f6, #e5e7eb); */
-    border-radius: 24px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -328,6 +358,6 @@ header {
     max-width: 400px;
 }
 
-#job-card-template {
+#job-card-part {
     display: none;
 }
