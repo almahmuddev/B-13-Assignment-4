@@ -17,7 +17,7 @@ const jobsData = [
 let jobs = [...jobsData];
 let currentTab = "all";
 
-// manipulation dom
+// manipulation of dom
 const jobsContainer = document.getElementById("jobs-container");
 const tabButtons = document.querySelectorAll(".tab-btn");
 const totalCount = document.getElementById("available-count");
